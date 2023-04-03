@@ -82,7 +82,7 @@ deleteThought(req, res){
         );
     })
     .then( (dbUserData) => {
-        console.log('Yoyo: ', dbUserData)
+        // console.log('Yoyo: ', dbUserData)
         if(!dbUserData){
             return res.status(404).json({ message: 'Thought deleted but no user with this id!'})
         }
@@ -115,7 +115,7 @@ addReaction(req, res){
 },
 
 removeReaction(req, res) {
-    console.log(req.params)
+    // console.log(req.params)
     Thought.findOneAndUpdate(
         { _id: req.params.thoughtid },
         { $pull: { reactions: { reactionId: req.params.reactionid } } },
