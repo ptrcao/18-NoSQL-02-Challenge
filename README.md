@@ -45,6 +45,7 @@ This API has the following routes:
     }
     ```
 * PUT to update a user by its `_id`
+    * body with the updated info should be passed
 * DELETE to remove user by its `_id`
 
 `/api/users/:userId/friends/:friendid`
@@ -69,6 +70,7 @@ This API has the following routes:
 
 * GET to get a single thought by its `_id`
 * PUT to update a thought by its `_id`
+    * body with the updated info should be passed
 * DELETE to remove a thought by its `_id`
 
 `/api/thoughts/:thoughtid/reactions`
