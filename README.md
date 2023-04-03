@@ -57,6 +57,7 @@ DELETE to remove a thought by its `_id`
 POST to create a reaction stored in a single thought's reactions array field
 
 `/api/thoughts/:thoughtid/reactions/:reactionid`
+
 DELETE to pull and remove a reaction by the reaction's `reactionId` value
 
 To test these routes, use a tool like Insomnia.
