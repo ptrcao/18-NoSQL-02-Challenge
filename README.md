@@ -37,6 +37,13 @@ This API has the following routes:
 * GET all users
 * GET a single user by its `_id` and populated thought and friend data
 * POST a new user
+    * body:
+    ```
+    {
+	"username": "jack",
+	"email": "jack@email.com"
+    }
+    ```
 * PUT to update a user by its `_id`
 * DELETE to remove user by its `_id`
 
@@ -71,7 +78,7 @@ This API has the following routes:
     ```
     {
 	"username": "jack",
-	"reactionBody": "merry yesterday!"
+	"reactionBody": "I agree!"
     }	
     ```
 
