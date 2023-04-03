@@ -4,7 +4,7 @@ GitHub URL:
 > https://github.com/ptrcao/18-NoSQL-02-Challenge.git
 
 Video demo URL:
-> 
+> https://youtu.be/e0Z1vUT6iQg
 
 
 ## Project Description
