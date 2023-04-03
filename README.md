@@ -67,3 +67,10 @@ To test these routes, use a tool like Insomnia.
 * Express.js
 * MongoDB
 * Mongoose ODM
+
+
+## Credits
+PC
+
+## Credits
+No licensing has been specified; please check with the author prior to reproducing or redistributing the code.
