@@ -72,5 +72,5 @@ To test these routes, use a tool like Insomnia.
 ## Credits
 PC
 
-## Credits
+## License
 No licensing has been specified; please check with the author prior to reproducing or redistributing the code.
