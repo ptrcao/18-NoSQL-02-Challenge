@@ -50,7 +50,7 @@ const userController = {
   deleteUser(req, res) {
     User.findOneAndDelete({ _id: req.params.id }, {new: false})
       .then((dbUserData) => {
-        console.log('deleteUser dbUserData: ', dbUserData)
+        // console.log('deleteUser dbUserData: ', dbUserData)
         if (!dbUserData) {
           res.status(404).json({ message: "No user found with this id!" });
           return;
@@ -103,24 +103,6 @@ const userController = {
         res.status(500).json(err);
       });
   },
-  // delete user (BONUS: and delete all owned thoughts)
-  // deleteFriend(req, res) {
-  //     User.deleteOne({ _id: req.params.friendid })
-  //       .then(result => {
-  //         if (result.deletedCount === 0) {
-  //           return res.status(404).json({ message: 'Friend not found' });
-  //         }
-
-  //         //  BONUS: delete all thoughts in the array of user's thoughts
-  //        return Thought.deleteMany({_id: {$in: dbUserData.thoughts }})
-  //         // res.json(result);
-  //       })
-  //       .then(() => res.json({message: 'User and all owned thoughts deleted!'}))
-  //       .catch(err => {
-  //         console.log(err);
-  //         res.status(500).json({ message: 'Failed to delete friend' });
-  //       });
-  //   }
 
   deleteFriend(req, res) {
     User.findOneAndUpdate(
