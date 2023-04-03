@@ -35,7 +35,7 @@ createThought(req, res){
     .then( (dbThoughtData) =>
     {   console.log('dbThoughtData: ', dbThoughtData)
         return User.findOneAndUpdate(
-        { _id: req.body.id },
+        { _id: req.body.userid },
         { $push: { thoughts: dbThoughtData._id} }
         )
     })
