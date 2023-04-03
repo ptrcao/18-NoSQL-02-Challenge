@@ -78,8 +78,7 @@ deleteThought(req, res){
         // remove the thought from the user's thoughts array
         return User.findOneAndUpdate(
             { _id: req.params.userId },
-            { $pull: { thoughts: req.params.thoughtid } },
-            { new: true }
+            { $pull: { thoughts: req.params.thoughtid } }
         );
     })
     .then( dbUserData => {
