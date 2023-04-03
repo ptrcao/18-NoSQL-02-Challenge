@@ -77,13 +77,14 @@ deleteThought(req, res){
         }
         // remove the thought from the user's thoughts array
         return User.findOneAndUpdate(
-            { _id: req.params.userId },
+            { thoughts: req.params.thoughtid },
             { $pull: { thoughts: req.params.thoughtid } }
         );
     })
-    .then( dbUserData => {
+    .then( (dbUserData) => {
+        console.log('Yoyo: ', dbUserData)
         if(!dbUserData){
-            return res.status(404).json({ message: 'Thought deleted by no user with this id!'})
+            return res.status(404).json({ message: 'Thought deleted but no user with this id!'})
         }
         res.json({ message: 'Thought successfully deleted!' });
     }).
@@ -99,7 +100,7 @@ addReaction(req, res){
     Thought.findOneAndUpdate(
         { _id: req.params.thoughtid },
         { $addToSet: { reactions: req.body }},
-        { runValidators: true, new: true }
+        { runValidators: true }
     )
     .then( (dbThoughtData) => {
         if(!dbThoughtData){

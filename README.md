@@ -6,6 +6,7 @@ GitHub URL:
 Video demo URL:
 > 
 
+
 ## Project Description
 This project is an API for a social network web application that allows users to share their thoughts, react to friends' thoughts, and create a friend list. The application uses Express.js for routing, a MongoDB database, and the Mongoose ODM.
 
@@ -49,7 +50,13 @@ This API has the following routes:
 * GET to get all thoughts
 * POST to create a new thought (pushes the created thought's `_id` to the associated user's thoughts array field)
     * requires `userid` to be passed through req.body
-
+    ```
+    {
+	"username": "michael",
+	"userid": "642ae549917917a0dc0b9e15",
+	"thoughtText": "Glory to Britain!"
+    }	
+    ```
 
 `/api/thoughts/:thoughtid`
 
@@ -60,10 +67,19 @@ This API has the following routes:
 `/api/thoughts/:thoughtid/reactions`
 
 * POST to create a reaction stored in a single thought's reactions array field
+    * body:
+    ```
+    {
+	"username": "jack",
+	"reactionBody": "merry yesterday!"
+    }	
+    ```
+
 
 `/api/thoughts/:thoughtid/reactions/:reactionid`
 
 * DELETE to pull and remove a reaction by the reaction's `reactionId` value
+    * Be sure to use `reactionId` and not `_id`!
 
 To test these routes, use a tool like Insomnia.
 
